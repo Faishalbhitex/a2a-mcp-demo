@@ -1,0 +1,52 @@
+{
+  "name": "ts-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP Server demo typescript",
+  "main": "dist/server/streamableHTTPSTools.js",
+  "scripts": {
+    "start": "node dist/server/streamableHTTPSTools.js",
+    "dev": "tsx src/server/streamableHTTPSTools.ts",
+    "clean": "rm -rf dist/",
+    "build": "npm run clean && tsc",
+    "postbuild": "cp package.json dist/",
+    "railway:build": "npm run build",
+    "railway:start": "npm start",
+    "mcp:server:stdio": "node dist/server/stdioTools.js",
+    "mcp:https": "node dist/server/streamableHTTPSTools.js",
+    "mcp:inspect:stdio": "npx @modelcontextprotocol/inspector node dist/server/stdioTools.js",
+    "mcp:inspect": "npx @modelcontextprotocol/inspector",
+    "mcp:echo": "bash scripts/echo-mcp-server.sh",
+    "mcp:client:stdio": "node dist/client/stdioClient.js",
+    "mcp:client:https": "node dist/client/streamableHTTPSClient.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "calculator",
+    "typescript"
+  ],
+  "author": "Faishalbhitex",
+  "license": "ISC",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.2",
+    "@types/cors": "^2.8.19",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.2.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
+  }
+}
